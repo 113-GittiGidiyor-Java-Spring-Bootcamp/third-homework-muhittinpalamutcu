@@ -11,4 +11,5 @@ public interface BaseService<T> {
     void deleteById(int id);
     T update(T object);
     T findByName(String name);
+    void deleteByName(String name);
 }

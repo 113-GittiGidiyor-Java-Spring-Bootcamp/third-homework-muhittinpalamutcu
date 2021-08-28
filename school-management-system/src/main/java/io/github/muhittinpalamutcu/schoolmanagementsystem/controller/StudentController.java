@@ -15,6 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/api")
 public class StudentController {
+
     private final StudentService studentService;
 
     // @desc Get all students
@@ -62,7 +63,7 @@ public class StudentController {
     // @route Get /api/students/getByName/{name}
     // @access Public
     @GetMapping("/students/getByName/{name}")
-    public Student findById(@PathVariable String name) {
+    public Student findByName(@PathVariable String name) {
         return studentService.findByName(name);
     }
 

@@ -11,7 +11,6 @@ import java.util.List;
 public interface StudentRepository extends CrudRepository<Student, Integer> {
 
     Student findByName(String name);
-    void deleteByName(String name);
     void deleteStudentByName(String name);
 
     @Query("select count(s) from Student s  group by s.gender")
