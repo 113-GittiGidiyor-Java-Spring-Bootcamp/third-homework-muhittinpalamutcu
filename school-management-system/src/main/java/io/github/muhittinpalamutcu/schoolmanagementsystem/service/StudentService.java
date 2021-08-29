@@ -51,6 +51,7 @@ public class StudentService implements BaseService<Student> {
         return studentRepository.getGenderWithGrouping();
     }
 
+    @Override
     @Transactional
     public void deleteByName(String name) {
         studentRepository.deleteStudentByName(name);

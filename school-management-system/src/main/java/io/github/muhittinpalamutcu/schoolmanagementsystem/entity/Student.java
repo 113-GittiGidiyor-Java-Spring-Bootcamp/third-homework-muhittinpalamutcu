@@ -1,5 +1,6 @@
 package io.github.muhittinpalamutcu.schoolmanagementsystem.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,6 +25,7 @@ public class Student {
     private LocalDate birthDate;
     private String gender;
 
-    @ManyToMany
+    @JsonManagedReference
+    @ManyToMany(mappedBy = "students")
     private List<Course> courses = new ArrayList<>();
 }

@@ -1,5 +1,6 @@
 package io.github.muhittinpalamutcu.schoolmanagementsystem.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,9 +24,11 @@ public class Course {
     private String courseCode;
     private int creditScore;
 
-    @ManyToMany(mappedBy = "courses")
+    @JsonBackReference
+    @ManyToMany
     private List<Student> students = new ArrayList<>();
 
+    @JsonBackReference
     @ManyToOne
     private Instructor instructor;
 }

@@ -13,7 +13,6 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/api")
 public class CourseController {
-
     private final CourseService courseService;
 
     // @desc Get all courses
@@ -73,5 +72,4 @@ public class CourseController {
         courseService.deleteByName(name);
         return "Course deleted...";
     }
-
 }
